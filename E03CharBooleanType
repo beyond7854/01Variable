@@ -5,38 +5,61 @@ public class E03CharBooleanType
 
 	public static void main(String[] args)
 	{
-		
+		/*
+		char형 : 하나의 문자를 저장할 수 있는 자료형으로 값을 저장할때
+		'(single quotation)으로 감싸서 표현한다.
+		만약 "(double quotation)으로 감싸면 문자열로 인식하므로 String으로
+		선언하여야 한다.
+		 */
 		char ch1 = '가';
-		//char chStr = '가나다라';
-		String chStr = "가나다라";
+		//char chStr = '가나다라'; 에러발생 문자열이므로 char로 선언 불가능
+		String chStr = "가나다라"; //문자열이므로 String으로 선언하여야한다.
 		System.out.println("ch1 = "+ ch1);
 		System.out.println("chStr = " + chStr);
 		
-		char ch2 = 'A';
-		int num1 = 2;
-		int num2 = ch2 + num1;
-		System.out.println("num2="+ num2);
-		System.out.println("(char)num2=	"+(char)num2);
+		/*
+		아스키코드 : 1byte로 표현할 수 있는 문자(영문, 숫자)를 십진수로 정의한
+		것을 말한다.
+		예) A > 65로 표현된다. a > 97로 표현된다.
+		유니코드 : 1byte로 표현할 수 없는 문자로 한글,한자, 일본어 등을 2byte로 
+		표현한 것을 말한다. 주로 16진수로 표현한다.
+		 */
+		char ch2 = 'A'; //아스키 코드값 65로 저장된다.
+		int num1 = 2; // 정수 2로 선언.
+		int num2 = ch2 + num1; //아스키 코드로 저장되기에 덧셈이 가능하다.
+		System.out.println("num2="+ num2);// 두개를 더하여 67로 출력이된다.
+		System.out.println("(char)num2=	"+(char)num2); //C가 출력된다.
 		
-		char ch3 = (char)(ch2+num1);
-		System.out.println("ch3(문자출력)="+ch3);
-		System.out.println("ch3(아스키코드출력)="+(int)ch3);
+		char ch3 = (char)(ch2+num1); //(char)(char+int=>int) > char형번환
+		System.out.println("ch3(문자출력)="+ch3); //C 출력됨
+		System.out.println("ch3(아스키코드출력)="+(int)ch3); // 아스키코드 C의값 67이 출력됨
 		
-		char ch4 = '1';
-		char ch4_1 = '1' +1;
-		System.out.println("ch4="+ ch4+", ch4_1="+ ch4_1+", ch4_1="+(int)ch4_1);
+		char ch4 = '1'; //싱글이므로 문자1
+		char ch4_1 = '1' +1; // 아스키코드 49+정수1이므로 50
+		System.out.println("ch4="+ ch4+", ch4_1="+ ch4_1+", ch4_1="+(int)ch4_1); //문자2 숫자50
 		
+		/*
+		boolean형 : true, false 두가지 값만 가질 수 있는 자료형
+		산술연산이나 비교연산에서는 사용할 수 없고
+		논리연산에서만 사용 가능하다.
+		 */
 		boolean bn1 = true;
 		boolean bn2 = false;
-		System.out.println("bn1 ="+bn1+", bn2"+ bn2);
+		System.out.println("bn1 = "+bn1+", bn2 = "+ bn2);
 		
-		boolean bn3 = bn1 && bn2;
-		System.out.println("bn3(and)=" + bn3);
-		bn3 = bn1 || bn2;
-		System.out.println("bn3(or)="+bn3);
+		/*
+		&&(논리 And) : 엠퍼센트를 사용하고, 양쪽모두 참일때만 참을 반환함
 		
-		bn3 = '가' > 30000;
-		System.out.println("bn3="+ bn3);
+		||(논리 or) : 파이프를 사용하고, 둘중 하나만 참이어도 참을 반환함
+		 			  둘다 거짓일때만 거짓을 반환함
+		 */			  
+		boolean bn3 = bn1 && bn2; // T && F => 둘다 true 여야하므로 false 반환
+		System.out.println("bn3(and)= " + bn3);
+		bn3 = bn1 || bn2; // T || F => bn1이 true 이므로 true를 반환함
+		System.out.println("bn3(or)= "+bn3);
+		
+		bn3 = '가' > 30000; // '가'의 유니코드값은 4만이 넘으므로 결과는 true
+		System.out.println("bn3= "+ bn3);
 		
 		
 		
