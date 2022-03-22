@@ -5,15 +5,34 @@ public class E01JunsuType
 
 	public static void main(String[] args)
 	{
-
+		/*
+ 		정수형 자료형
+ 		-byte, short , int, long 타입(형)이 있다.
+ 		-각 자료형의 표현 범위는 교안을 참조한다.
+ 		-일반적으로 cpu(중앙처리장치)는 정수형 연산을 할때 int형을 가장 빠르게
+ 		처리한다.
+ 		-즉, 정수형 변수를 쓸때는 거의 대부분 int를쓴다.
+ 		*/
+		
 		int int1 = 100;
 		int int2 = 200;
 		int result1 = int1 + int2;
 		System.out.println("int1 + int2 = " + result1);
-
+		
+		/* 
+ 		/ 연산자는 두개의 숫자를 나눠서 몫을 구하는 연산자이다.
+ 		100 / 200의 결과는 0이다. int가 정수형이기에
+ 		*/
+		
 		result1 = int1 / int2;
 		System.out.println("int1 / int2 = " + result1);
-
+		
+		/*
+		 -동일한 타입의 변수 두개 설정할땐 ,를 써도 좋다.
+		 -int형보다 작은 자료형을 연산시 CPU는 int형으로 변환하여 연산한다.
+		-bye, short형은 게임캐릭터의 움직이나 음원정보등을 표현할떄 자주사용함
+		*/
+		
 		byte byte1 = 50, byte2 = 55;
 		int result2 = byte1 + byte2;
 		System.out.println("byte1 + byte2 = " + result2);
@@ -21,10 +40,26 @@ public class E01JunsuType
 		short short1 = 60, short2 = 70;
 		int result3 = short1 + short2;
 		System.out.println("short1 + short2 = " + result3);
-
-		long long1 = 1000, long2 = 2000;
+		
+		/*
+		 -동일자료형 끼리의 연산은 동일자료형이 되는것이 기본원칙
+		 -하지만 큰 자료형과 작은 자료형을 연산하면 큰 자료형으로 
+		 자동 형변환이 된다. 데이터 손실이 생길 수 있기에.
+		 -단, byte 형과 short형은 예외적인 상황으로 생각하면된다.
+		 int형으로 최적화된 CPU의 특성 때문이다.
+		 */
+		 
+		
+		long long1 = 1000, long2 = 2000; //long 끼리 연산은 기본규칙을 따른다.
 		long result4 = int1 + long1;
 		System.out.println("int1 + long1 = " + result4);
+		
+		/*
+		자바컴파일러는 정수형 상수를 기본적으로 int형으로
+		간주하기때문에 long형 자료임을 명시해야함 이와같이
+		대입을 위해 입력되는 숫자도 자료형을 기반으로 메모리에 저장된다.
+		이를 리터럴이라고 한다.
+		*/
 
 		// long long3 = 2200000000;
 		long long4 = 2200000000l;
