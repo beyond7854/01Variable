@@ -10,7 +10,7 @@ package ex01start;
 		: 출력내용을 서식에 맞춰 출력한다. 또한 자체적인
 		줄바꿈이 없으므로 \n혹은 %n을 이용하여 줄바꿈 처리한다.
 		서식문자에는 %d, %f등이 있다.
-		단, %n은 printf에서만 사용할 수 있다.
+		단, %n은 printf에서만 사용할 수 있다. 수정 
 		
  */
 public class E02SystemOutPrintln
