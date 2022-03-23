@@ -6,22 +6,42 @@ public class E06EscapeSequence
 	public static void main(String[] args)
 	{
 		System.out.println("4월엔 벚꽃~!");
-		System.out.println("4월엔 \t벚꽃~!");
+		System.out.println("4월엔 \t벚꽃~!"); // \t는 스페이스4칸 띄워짐
 		
 		System.out.print("KOSMO에 오신걸 환영합니다.\n");
-		System.out.print("열심히 \n해봅시다.\n");
+		System.out.print("열심히 \n해봅시다.\n"); // \n은 줄바꿈
 		
-		//System.out.println("나는 "개발자"가 되고 싶어요);
+		//System.out.println("나는 "개발자"가 되고 싶어요); 문자열 사이에 
+		//더블쿼테이션을 사용하고싶을땐 \" 를 사용하여야 한다.
 		System.out.println("나는 \"개발자\"가 되고싶어요");
 		
+		
+		//printf() : 문자열 서식에 맞춰 출력할떄 사용합니다.
 		int kor=81 , eng=99, math= 77;
+		
+		//정수인 경우에는 %d를 사용합니다. %n 줄바꿈
 		System.out.printf("국어:%d, 영어 %d, 수학:%d%n", kor, eng, math);
 		System.out.println("\n국어: "+kor+"\n영어"+eng+"\n수학"+math);
 		
-		double avg = kor+eng+math / 3.0;
+		
+		//double av2 = (kor+eng+math) /3 ;
+		double sum = kor+eng+math;
+		double avg = sum / 3.0;
+		
+		
+		//실수는 %f를 사용한다.
 		System.out.printf("평균점수:%f%n", avg);
+		
+		/*
+		자리수 지정하기
+		%4d: 정수 출력시 전체 자리수를 4자리로 표현
+		%6.2f : 실수 출력시 전체 자리수는 2자리, 소수이하는 2자리로 표현
+		양수는 우측정령 음수는 좌측정렬이 된다.
+		 */
 		System.out.printf("국어 : %d, 영어 : %d, 수학:%d",kor, eng,math,avg);
 		System.out.printf("국어:%6d, 영어:%6d, 수학%6d"+"평균%7.2f%n", kor, eng,math, avg);
-		System.out.printf("국어:%-6d, 영어:%-6d, 수학%-6d, kor,eng,math,avg");
+		System.out.printf("국어:%-6d, 영어:%-6d, 수학%-6d", kor,eng,math,avg);
 		
 	}
+
+}
